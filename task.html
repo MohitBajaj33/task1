@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event Challange</title>
+</head>
+<body>
+    <button id="ChangeTextButton" onclick="toggleText()">Change Test</button>
+    <div id="textContainer">This is the initial text.</div>
+    <script>
+  const textContainer = document.getElementById('textContainer');
+const changeTextButton = document.getElementById('changeTextButton');
+
+let originalText = textContainer.innerText;
+let isTextChanged = false;
+
+function toggleText() {
+  if (isTextChanged) {
+    textContainer.innerText = originalText;
+    isTextChanged = false;
+  } else {
+    textContainer.innerText = 'New Text';
+    isTextChanged = true;
+  }
+}
+changeTextButton.addEventListener('click', toggleText);
+    </script>
+    
+</body>
+</html>
